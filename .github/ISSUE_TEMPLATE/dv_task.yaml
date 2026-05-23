@@ -1,0 +1,47 @@
+name: Design Verification Task
+description: Create a new verification task for AXI, FIFO, or RAM modules
+title: "[DV Task]: "
+labels: ["verification"]
+body:
+  - type: markdown
+    attributes:
+      value: "## Welcome! Please fill out the details below to start your verification task."
+  
+  - type: input
+    id: module-name
+    attributes:
+      label: Module Name
+      placeholder: e.g., AXI-Interconnect
+    validations:
+      required: true
+
+  - type: dropdown
+    id: protocol
+    attributes:
+      label: Protocol
+      options:
+        - AXI
+        - FIFO
+        - RAM
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Task Description
+      description: "Briefly explain the verification objective."
+      placeholder: "e.g., Implementing dual scoreboard mechanism for AXI..."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: criteria
+    attributes:
+      label: Acceptance Criteria
+      options:
+        - label: Testbench architecture completed
+          required: true
+        - label: Compilation passed
+        - label: Regression testing scheduled
