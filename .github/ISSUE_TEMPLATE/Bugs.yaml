@@ -1,0 +1,38 @@
+name: Bug Report
+description: Report a failure in the simulation or testbench
+title: "[BUG]: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: "What went wrong? (e.g., Scoreboard mismatch, Assertion failure)"
+    validations:
+      required: true
+
+  - type: input
+    id: testcase
+    attributes:
+      label: Testcase Name
+      placeholder: e.g., axi_read_stress_test
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Critical (Blocks release)
+        - Major (Functional failure)
+        - Minor (Documentation/Cosmetic)
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant Logs/Traces
+      description: "Paste simulation logs or link to wave traces here"
+      render: shell
