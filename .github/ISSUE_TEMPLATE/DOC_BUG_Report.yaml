@@ -1,0 +1,110 @@
+# ==============================================================================
+# Company        : RiRe Technology
+# Copyright      : All rights reserved. Copyright ©️2026 RiRe Tech
+# Date           : May 24, 2026
+# Author         : Karankumar Nevage
+# Description    : GitHub Issue Template for reporting errors, typos, or 
+#                  missing information in the project documentation.
+# ==============================================================================
+
+name: Documentation Bug Report
+description: Report an error, typo, or missing information in the documentation
+title: "[DOC BUG]: "
+labels: ["bug", "documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        #                             Documentation Bug Report
+        ---
+        Please provide details about the error or missing information in the documentation to help us fix it.
+        
+        ### ℹ️ Document Information
+        ---
+
+  - type: input
+    id: doc-name
+    attributes:
+      label: 📄 Document Name or Link
+      description: "Specify the exact name or provide a link to the document."
+      placeholder: "e.g., UVM Architecture Guide, Register Map, or URL"
+    validations:
+      required: true
+
+  - type: input
+    id: doc-version
+    attributes:
+      label: ⚙️ Document Version / Date
+      description: "Which version or date of the document were you reading?"
+      placeholder: "e.g., v1.2, Rev B, or 2026-05-20"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 🐛 Issue Details 🐛
+        ---
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: 🧩 Type of Issue
+      options:
+        - Inaccurate Technical Information
+        - Missing Information
+        - Typo / Grammar Mistake
+        - Broken Link / Formatting Issue
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Failure Description
+      description: "Explain what is wrong. What does the document currently say, and what should it say?"
+      placeholder: "Section 3.2 says the FIFO depth is 16, but the RTL implements a depth of 32."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 📍 Location & Suggested Fix
+        ---
+
+  - type: input
+    id: location
+    attributes:
+      label: 🔍 Specific Location
+      description: "Where exactly is this issue located in the document?"
+      placeholder: "e.g., Page 14, Section 3.2, or Line 45"
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested-fix
+    attributes:
+      label: 💡 Suggested Fix (Optional)
+      description: "If you know the correct information, please provide it here."
+      placeholder: "Update the FIFO depth to 32 to match the current RTL release."
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 🚨 Impact
+        ---
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Impact Level
+      options:
+        - 🔴Critical (Misleading technical spec causing design/verification bugs)
+        - 🟠Major (Missing important information)
+        - 🟡Minor (Typo, formatting, or cosmetic issue)
+    validations:
+      required: true
