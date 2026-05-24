@@ -22,8 +22,6 @@ body:
         ### ℹ️🛠️ RTL Information
         ---
 
-
-
   - type: input
     id: rtl-version
     attributes:
