@@ -7,7 +7,7 @@
 #                  failures in the RTL design.
 # ==============================================================================
 
-name: RTL Bug Report
+name: RTL Bug Report 001
 description: Report a functional or timing failure in the RTL design
 title: "[RTL BUG]: "
 labels: ["bug", "rtl"]
