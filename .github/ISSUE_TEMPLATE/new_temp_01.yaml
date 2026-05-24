@@ -33,6 +33,15 @@ body:
     validations:
       required: true
 
+    - type: input
+    id: rtl-files
+    attributes:
+      label: RTL File Name
+      description: "Specify the exact file name where this issue occurs."
+      placeholder: "e.g., state_machine.v"
+    validations:
+      required: true
+
   - type: markdown
     attributes:
       value: |
