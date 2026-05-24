@@ -19,22 +19,22 @@ body:
         ---
         Please provide detailed simulation and tracing information to help reproduce and fix this issue.
         
-        ### ℹ️🛠️ RTL Information
+        ### ℹ️RTL Information
         ---
 
   - type: input
     id: rtl-version
     attributes:
-      label: RTL Version / Git Commit
+      label:⚙️RTL Version / Git Commit
       description: "Specify the exact Git commit hash or RTL tag used for simulation."
       placeholder: "e.g., commit hash 1a2b3c4"
     validations:
       required: true
 
-- type: input
+  - type: input
     id: rtl-files
     attributes:
-      label: RTL File Name
+      label: 🧩RTL File Names
       description: "Specify the exact file name where this issue occurs."
       placeholder: "e.g., state_machine.v"
     validations:
