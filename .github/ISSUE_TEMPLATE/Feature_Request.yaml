@@ -1,0 +1,94 @@
+# ==============================================================================
+# Company        : RiRe Technology
+# Copyright      : All rights reserved. Copyright ©️2026 RiRe Tech
+# Date           : May 24, 2026
+# Author         : Karankumar Nevage
+# Description    : GitHub Issue Template for proposing new features, 
+#                  testcases, or enhancements.
+# ==============================================================================
+
+name: Feature Request
+description: Propose a new feature, testcase, or enhancement to the design or testbench
+title: "[FEATURE]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        #                             Feature Request
+        ---
+        Please provide a clear description of the new feature or enhancement you are proposing.
+        
+        ### ℹ️ Target Information
+        ---
+
+  - type: dropdown
+    id: target-area
+    attributes:
+      label: 🎯 Target Area
+      description: "Which part of the project does this feature apply to?"
+      options:
+        - UVM Testbench / UVC
+        - New Testcase / Sequence
+        - RTL Design
+        - Scripts / Infrastructure
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 💡 Feature Details 💡
+        ---
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature Description
+      description: "Clearly and simply describe the feature you want to add."
+      placeholder: "Add a new UVM sequence to test back-to-back burst writes in the AXI interconnect."
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case / Justification
+      description: "Why is this feature needed? What problem does it solve or what coverage does it hit?"
+      placeholder: "This is required to hit the 100% functional coverage goal for the write address channel."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 🛠️ Implementation Details
+        ---
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Implementation (Optional)
+      description: "If you have an idea of how to implement this, please describe it here."
+      placeholder: "We can extend the base sequence class and add a loop with randomized delays."
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 🚨 Priority
+        ---
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority Level
+      options:
+        - 🔴High (Needed for the current tapeout or milestone)
+        - 🟠Medium (Good to have, but not blocking)
+        - 🟡Low (Nice to have for future releases)
+    validations:
+      required: true
