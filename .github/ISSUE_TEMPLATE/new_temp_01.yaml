@@ -15,24 +15,14 @@ body:
   - type: markdown
     attributes:
       value: |
-        # RTL Bug Report
+        #                             RTL Bug Report
         ---
         Please provide detailed simulation and tracing information to help reproduce and fix this issue.
         
-        ### 🛠️ RTL Information
+        ### ℹ️🛠️ RTL Information
         ---
 
-  - type: dropdown
-    id: module
-    attributes:
-      label: Failing Module
-      options:
-        - AXI Interconnect
-        - Asynchronous FIFO
-        - Single-port RAM
-        - Other
-    validations:
-      required: true
+
 
   - type: input
     id: rtl-version
