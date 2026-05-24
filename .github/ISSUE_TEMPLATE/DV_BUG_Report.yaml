@@ -1,0 +1,134 @@
+# ==============================================================================
+# Company        : RiRe Technology
+# Copyright      : All rights reserved. Copyright ©️2026 RiRe Tech
+# Date           : May 24, 2026
+# Author         : Karankumar Nevage
+# Description    : GitHub Issue Template for reporting functional or infrastructure 
+#                  failures in the Verification/UVM environment.
+# ==============================================================================
+
+name: Verification Bug Report
+description: Report an issue with the testbench, UVC, scoreboard, or assertions
+title: "[DV BUG]: "
+labels: ["bug", "dv"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        #                             Verification Bug Report
+        ---
+        Please provide detailed simulation and tracing information to help reproduce and fix this testbench issue.
+        
+        ### ℹ️ DV Environment Information
+        ---
+
+  - type: input
+    id: dv-version
+    attributes:
+      label: ⚙️ DV Version / Git Commit
+      description: "Specify the exact Git commit hash or DV tag used for simulation."
+      placeholder: "e.g., commit hash 1a2b3c4"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: failing-component
+    attributes:
+      label: 🧩 Failing TB Component
+      description: "Which part of the verification environment is failing?"
+      options:
+        - Scoreboard / Reference Model
+        - Sequence / Sequencer
+        - Driver / Monitor
+        - SVA (SystemVerilog Assertions)
+        - Infrastructure / Scripts
+        - Other
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 🐛 Failure Details 🐛
+        ---
+
+  - type: input
+    id: testcase
+    attributes:
+      label: Failing Testcase
+      description: "Provide the name of the testcase that triggered the failure."
+      placeholder: "e.g., axi_random_burst_test"
+    validations:
+      required: true
+
+  - type: input
+    id: sim-seed
+    attributes:
+      label: 🌱 Simulation Seed
+      description: "Provide the random seed used for this simulation to ensure reproducibility."
+      placeholder: "e.g., svseed 12345678"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Failure Description
+      description: "Describe the TB failure. Is it a UVM_ERROR, scoreboard mismatch, or a sequence hang?"
+      placeholder: "Scoreboard reported a data mismatch between reference model and DUT output at time X..."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 💻 Reproduction & Traces
+        ---
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: 🪜 Steps to Reproduce
+      description: "List the exact steps, scripts, or commands used to run the simulation."
+      placeholder: |
+        1. Checkout branch '...'
+        2. Run `make sim TEST=... SEED=...`
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: 🌄 Simulation Environment
+      description: "Specify the CAD tool and version used for simulation and tracing."
+      placeholder: "e.g., Xcelium 20.09, VCS 2021.09"
+    validations:
+      required: true
+
+  - type: textarea
+    id: traces
+    attributes:
+      label: Logs and Traces
+      description: "Provide server paths to the simulation log files and CAD tracing output."
+      placeholder: "/path/to/server/logs/uvm_test.log or attach tracing screenshots."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 🚨 Impact
+        ---
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Impact Level
+      options:
+        - 🔴Critical (Blocks further verification)
+        - 🟠Major (Functional failure)
+        - 🟡Minor (Cosmetic/Documentation)
+    validations:
+      required: true
+
+# ==============================================================================
