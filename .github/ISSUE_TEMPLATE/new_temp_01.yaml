@@ -1,0 +1,120 @@
+# ==============================================================================
+# Author Company : riretech
+# Copyright      : All rights reserved 2026 rire tech
+# Date           : May 24, 2026
+# Author         : Karankumar Nevage
+# Description    : GitHub Issue Template for reporting functional or timing 
+#                  failures in the RTL design.
+# ==============================================================================
+
+name: RTL Bug Report
+description: Report a functional or timing failure in the RTL design
+title: "[RTL BUG]: "
+labels: ["bug", "rtl"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        # RTL Bug Report
+        ---
+        Please provide detailed simulation and tracing information to help reproduce and fix this issue.
+        
+        ### 🛠️ RTL Information
+        ---
+
+  - type: dropdown
+    id: module
+    attributes:
+      label: Failing Module
+      options:
+        - AXI Interconnect
+        - Asynchronous FIFO
+        - Single-port RAM
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: rtl-version
+    attributes:
+      label: RTL Version / Git Commit
+      description: "Specify the exact Git commit hash or RTL tag used for simulation."
+      placeholder: "e.g., commit hash 1a2b3c4"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 🐛 Failure Details
+        ---
+
+  - type: input
+    id: testcase
+    attributes:
+      label: Failing Testcase
+      description: "Provide the name of the testcase that triggered the failure."
+      placeholder: "e.g., axi_burst_write_test"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Failure Description
+      description: "Describe the expected behavior and the actual observed behavior."
+      placeholder: "Expected the FIFO full flag to assert at clock cycle X, but it remained low."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 💻 Reproduction & Traces
+        ---
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: "List the exact steps, scripts, or commands used to run the simulation."
+      placeholder: |
+        1. Checkout branch '...'
+        2. Run `make sim TEST=...`
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Simulation Environment
+      description: "Specify the CAD tool and version used for simulation and tracing."
+      placeholder: "e.g., Xcelium 20.09, VCS 2021.09"
+    validations:
+      required: true
+
+  - type: textarea
+    id: traces
+    attributes:
+      label: Waveforms and Logs
+      description: "Provide server paths to the waveform database, CAD tracing output, and simulation log files."
+      placeholder: "/path/to/server/logs/sim.log or attach tracing screenshots."
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### 🚨 Impact
+        ---
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Critical (Blocks further verification)
+        - Major (Functional failure)
+        - Minor (Cosmetic/Documentation)
+    validations:
+      required: true
