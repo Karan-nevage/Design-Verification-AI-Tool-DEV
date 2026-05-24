@@ -25,7 +25,7 @@ body:
   - type: input
     id: rtl-version
     attributes:
-      label:⚙️RTL Version / Git Commit
+      label: ⚙️RTL Version / Git Commit
       description: "Specify the exact Git commit hash or RTL tag used for simulation."
       placeholder: "e.g., commit hash 1a2b3c4"
     validations:
@@ -43,7 +43,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        ### 🐛 Failure Details
+        ### 🐛 Failure Details 🐛
         ---
 
   - type: input
@@ -73,7 +73,7 @@ body:
   - type: textarea
     id: steps-to-reproduce
     attributes:
-      label: Steps to Reproduce
+      label: 🪜Steps to Reproduce
       description: "List the exact steps, scripts, or commands used to run the simulation."
       placeholder: |
         1. Checkout branch '...'
@@ -84,7 +84,7 @@ body:
   - type: input
     id: environment
     attributes:
-      label: Simulation Environment
+      label: 🌄Simulation Environment
       description: "Specify the CAD tool and version used for simulation and tracing."
       placeholder: "e.g., Xcelium 20.09, VCS 2021.09"
     validations:
@@ -108,10 +108,10 @@ body:
   - type: dropdown
     id: severity
     attributes:
-      label: Severity
+      label: Impact Level
       options:
-        - Critical (Blocks further verification)
-        - Major (Functional failure)
-        - Minor (Cosmetic/Documentation)
+        - 🔴Critical (Blocks further verification)
+        - 🟠Major (Functional failure)
+        - 🟡Minor (Cosmetic/Documentation)
     validations:
       required: true
