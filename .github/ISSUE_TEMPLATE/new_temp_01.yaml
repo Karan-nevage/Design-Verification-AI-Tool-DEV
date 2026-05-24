@@ -1,36 +1,47 @@
 # ==============================================================================
-# Author Company : RiReTech
-# Copyright      : All rights reserved. Copyright  2026 RiRe Tech
+# Author Company : riretech
+# Copyright      : All rights reserved 2026 rire tech
 # Date           : May 24, 2026
 # Author         : Karankumar Nevage
 # Description    : GitHub Issue Template for reporting functional or timing 
 #                  failures in the RTL design.
 # ==============================================================================
 
-name:RTL Bug Report 000
-description: Report a functional or timing failure in the RTL design.
+name: RTL Bug Report
+description: Report a functional or timing failure in the RTL design
 title: "[RTL BUG]: "
 labels: ["bug", "rtl"]
 body:
   - type: markdown
     attributes:
       value: |
-        #                    RTL Bug Report
+        # RTL Bug Report
         ---
-        Please share your exact simulation steps and waveform logs so we can fix this bug.
+        Please provide detailed simulation and tracing information to help reproduce and fix this issue.
         
-        ###ℹ️ RTL Information
-        ---     
+        ### 🛠️ RTL Information
+        ---
+
+  - type: dropdown
+    id: module
+    attributes:
+      label: Failing Module
+      options:
+        - AXI Interconnect
+        - Asynchronous FIFO
+        - Single-port RAM
+        - Other
+    validations:
+      required: true
 
   - type: input
-    id: rtl-version 
+    id: rtl-version
     attributes:
       label: RTL Version / Git Commit
-      description: "Specify the exact Git commit hash or RTL Release tag used for simulation."
+      description: "Specify the exact Git commit hash or RTL tag used for simulation."
       placeholder: "e.g., commit hash 1a2b3c4"
     validations:
       required: true
-      ---
 
   - type: markdown
     attributes:
