@@ -1,6 +1,6 @@
 # ==============================================================================
-# Author Company : riretech
-# Copyright      : All rights reserved 2026 rire tech
+# Company        : RiRe Technology
+# Copyright      : All rights reserved. Copyright ©️2026 RiRe Tech
 # Date           : May 24, 2026
 # Author         : Karankumar Nevage
 # Description    : GitHub Issue Template for reporting functional or timing 
@@ -115,3 +115,5 @@ body:
         - 🟡Minor (Cosmetic/Documentation)
     validations:
       required: true
+
+# ==============================================================================
