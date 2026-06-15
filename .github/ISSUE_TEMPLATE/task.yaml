@@ -1,0 +1,56 @@
+# ==============================================================================
+# Company        : RiRe Technology
+# Copyright      : All rights reserved. Copyright ©️2026 RiRe Tech
+# Date           : June 15, 2026
+# Author         : Karankumar Nevage
+# Description    : GitHub Issue Template for tracking tasks, including 
+#                  objectives, strategies, and blockers.
+# ==============================================================================
+
+name: Task Tracker
+description: Create a new task to track objectives, strategy, and status.
+title: "[TASK]: "
+labels: ["task"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        #                             Task Tracker
+        ---
+        Please provide the details below to accurately track the objective, strategy, and status of this task.
+
+  - type: textarea
+    id: task-objective
+    attributes:
+      label: 🎯 Task Objective
+      description: "Describe the main goal and purpose of this task in detail."
+      placeholder: "e.g., Verify the new APB interface integration..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: ✅ Acceptance Criteria
+      description: "List the conditions that must be met for this task to be considered complete."
+      placeholder: "e.g., \n- [ ] UVM testbench compiles without errors\n- [ ] Functional coverage hits 100%"
+    validations:
+      required: true
+
+  - type: textarea
+    id: approach-strategy
+    attributes:
+      label: 🛠️ Approach and Strategy
+      description: "Explain the methodology and steps you will take to complete this task."
+      placeholder: "e.g., I will first develop the layered testbench architecture, then create the necessary UVCs..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: blockers-status
+    attributes:
+      label: 🚧 Blockers and Status
+      description: "Detail any current blockers preventing progress, and provide the current status."
+      placeholder: "e.g., Currently blocked waiting for the latest RTL drop. Status: Environment setup is 50% complete."
+    validations:
+      required: true
